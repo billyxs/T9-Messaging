@@ -1,0 +1,49 @@
+#inputContainer {}
+
+#inputContainer input {
+  font-size: 25px;
+  text-align: center;
+  height: 65px;
+  margin-bottom: 5px;
+}
+
+.button-text {
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.number-box {
+  min-height: 93px;
+}
+
+
+#clearBtn {
+  font-size: 30px;
+}
+
+#messageHeader,
+#wordsHeader {
+  margin:0 0 5px 0;
+}
+
+#wordList {
+  max-height: 430px;
+  overflow: scroll;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid 000;
+}
+
+#wordList li {
+  margin-bottom:2px;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#messageBox {
+  height: 200px;
+  font-size:25px;
+}

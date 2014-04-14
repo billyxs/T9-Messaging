@@ -1,0 +1,52 @@
+<!doctype html >
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>T9</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/app.css" rel="stylesheet" />
+
+</head>
+<body>
+  <div ng-app ng-controller="T9Controller" class="container">
+    <h1>T9 Compositions</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div id="inputContainer">
+          <input class="form-control" id="disabledInput" type="text" value="{{inputStr}}" placeholder="Press Numbers To Begin" disabled>
+        </div>
+        <div ng-repeat="button in buttonOrder" ng-click="addDigit(button)">
+          <div class="number-box col-md-4 btn btn-lg btn-primary">
+            <span class="button-text">{{button}}</span>
+            <span ng-repeat="letter in buttonMap[button]">{{letter}}</span>
+          </div>
+        </div>
+        <div>
+          <button id="clearBtn" class="btn btn-block btn-large btn-danger" ng-click="clearInput()">Clear</button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h2 id="wordsHeader" class="alert alert-info">Select Word</h2>
+        <ul id="wordList">
+          <li class="alert alert-warning" ng-repeat="word in possibleWords" ng-click="addWordToMessage(word)">{{word}}</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h2 id="messageHeader" class="alert alert-info">Your Message</h2>
+        <textarea class="form-control" id="messageBox" placeholder="" disabled>{{message}}</textarea>
+        <br />
+        <button class="btn btn-lg  btn-danger" ng-click="clearMessage()">Clear Message</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/angular.js"></script>
+  <script src="assets/scripts.js?v=1"></script>
+
+</body>
+</html>
